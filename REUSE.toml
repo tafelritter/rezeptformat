@@ -1,0 +1,32 @@
+version = 1
+SPDX-PackageName = "rezeptformat"
+SPDX-PackageDownloadLocation = "https://github.com/Tafelritter/rezeptformat"
+
+# Code: AGPL-3.0-or-later (dist/ ist daraus gebaut)
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Stefan Niedermaier und die Mitwirkenden von Tafelrunde"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+# Konfiguration und generierte Dateien ohne Schöpfungshöhe
+[[annotations]]
+path = [
+  "pnpm-lock.yaml",
+  "package.json",
+  ".nvmrc",
+  ".gitignore",
+  ".gitattributes",
+  ".editorconfig",
+  ".prettierrc.json",
+  ".prettierignore",
+  "renovate.json",
+  "release-please-config.json",
+  ".release-please-manifest.json",
+  "CHANGELOG.md",
+  ".github/**",
+  "tsconfig*.json",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Stefan Niedermaier und die Mitwirkenden von Tafelrunde"
+SPDX-License-Identifier = "CC0-1.0"

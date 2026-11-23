@@ -1,0 +1,61 @@
+{
+  "name": "@tafelritter/rezeptformat",
+  "version": "0.0.0",
+  "description": "Rezeptformat von Tafelrunde: Cooklang-Parser mit deutschen Mengen und Referenzen, Kategorien und Prüfung des öffentlichen Katalogs.",
+  "license": "AGPL-3.0-or-later",
+  "type": "module",
+  "packageManager": "pnpm@12.14.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tafelritter/rezeptformat.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./basis": {
+      "types": "./dist/basis.d.ts",
+      "default": "./dist/basis.js"
+    },
+    "./katalog": {
+      "types": "./dist/katalog.d.ts",
+      "default": "./dist/katalog.js"
+    }
+  },
+  "bin": {
+    "rezeptformat": "./bin/rezeptformat.mjs"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@tmlmt/cooklang-parser": "2.1.8",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.6",
+    "@vitest/coverage-v8": "^5.1.1",
+    "eslint": "^10.15.0",
+    "prettier": "^3.10.1",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.73.0",
+    "vitest": "^5.1.1"
+  }
+}
